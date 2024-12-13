@@ -11,10 +11,7 @@ pipeline {
         stage('packages') {
             steps {
                 steps {
-                    sh 'rm -rf node_modules package-lock.json'  // Clean up any previous installs or lock files
-                    sh 'mkdir -p ~/.npm'  // Ensure the npm cache folder exists
-                    sh 'chown -R node:node ~/.npm'  // Change ownership to the node user in the container
-                    sh 'npm install'  // Reinstall dependencies
+                    sh 'npm install'  
                 }
             }
         }
