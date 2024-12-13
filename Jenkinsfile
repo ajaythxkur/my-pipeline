@@ -5,10 +5,12 @@ pipeline {
         stage('prerequesties') {
             steps {
                 sh 'node --version'
+                sh 'npm --version'
             }
         }
         stage('packages') {
             steps {
+                sh 'rm -rf node_modules package-lock.json'
                 sh 'npm install'
             }
         }
