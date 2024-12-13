@@ -10,7 +10,7 @@ pipeline {
         }
         stage('packages') {
             steps {
-                sh 'sudo chown -R 115:119 "/.npm'
+                sh 'sudo chown -R 115:119 "/.npm"'
                 sh 'rm -rf node_modules package-lock.json'
                 sh 'npm install'
             }
