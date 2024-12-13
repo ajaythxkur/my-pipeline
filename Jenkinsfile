@@ -7,6 +7,11 @@ pipeline {
                 sh 'node --version'
             }
         }
+        stage('packages') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('build') {
             steps {
                 sh 'node index.js'
